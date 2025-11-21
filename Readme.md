@@ -127,11 +127,6 @@ Ce projet est sous licence **ISC**. Aucune garantie n’est fournie. Usage à vo
 L’usage de selfbots est **interdit par Discord**. Ce projet est fourni à des fins **éducatives uniquement**. L’auteur ne pourra être tenu responsable de tout usage abusif.
 
 ---
-## 📝 Licence
-
-Ce projet est sous licence **MIT**. Voir le fichier [LICENSE](LICENSE) pour plus de détails.
-
----
 
 ## 👨‍💻 Créateur
 
