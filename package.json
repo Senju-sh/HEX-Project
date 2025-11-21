@@ -1,4 +1,26 @@
 {
+  "name": "hex-project",
+  "version": "1.0.0",
+  "description": "closed-project",
+  "keywords": [
+    "selfbots",
+    "javascript",
+    "discord.js-selfbot-v13"
+  ],
+  "homepage": "https://github.com/Senju-sh/HEX-Project#readme",
+  "bugs": {
+    "url": "https://github.com/Senju-sh/HEX-Project/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Senju-sh/HEX-Project.git"
+  },
+  "license": "ISC",
+  "author": "senju-sh",
+  "main": "index.js",
+  "scripts": {
+    "test": "node index.js"
+  },
   "dependencies": {
     "archiver": "^7.0.1",
     "canvas": "^3.0.0",

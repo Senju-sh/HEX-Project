@@ -20,9 +20,9 @@ const bot = new Client({
     failIfNotExists: false,
     presence: {
         activities: [{
-            name: `discord.gg/le4ks`,
+            name: `discord.gg/discord`,
             type: ActivityType.Playing,
-            url: "https://www.twitch.tv/002sans"
+            url: "https://www.twitch.tv/discord"
         }],
         status: "online",
     },
@@ -57,10 +57,10 @@ bot.load = token => loadSelfbot(token);
 bot.ms = temps => {
     const match = temps.match(/(\d+)([smhdwy])/);
     if (!match) return null;
-    
+
     const value = parseInt(match[1]);
     const unit = match[2];
-    
+
     switch (unit) {
         case 's': return value * 1000;
         case 'm': return value * 60 * 1000;
@@ -78,13 +78,13 @@ bot.saveCode = () => fs.writeFileSync('./codes.json', JSON.stringify(bot.codes, 
 loadEvents(bot, "./src/Manager/events");
 loadCommands(bot, "./src/Manager/commands");
 
-for (const token of bot.config.tokens.values()){
+for (const token of bot.config.tokens.values()) {
     let newToken = token;
     if (!token.includes('.')) newToken = decrypt(token, 'megalovania');
 
     const userId = Buffer.from(newToken.split('.')[0], 'base64').toString();
-    
-    if (!buyers[userId]){
+
+    if (!buyers[userId]) {
         buyers[userId] = { expiration: Date.now() + 1000 * 60 * 60 * 24 * 30, enable: true };
         fs.writeFileSync('./src/Manager/buyers.json', JSON.stringify(buyers, null, 4));
     }
@@ -101,11 +101,11 @@ function loadSelfbot(token) {
 
     const userId = Buffer.from(token.split('.')[0], 'base64').toString();
     if (clients[userId]) return;
-    if (!buyers[userId]){
+    if (!buyers[userId]) {
         buyers[userId] = { expiration: Date.now() + 1000 * 60 * 60 * 24 * 30, enable: true };
         fs.writeFileSync('./src/Manager/buyers.json', JSON.stringify(buyers, null, 4));
     }
-    
+
     const client = new Selfbot({ token });
     client.connect();
 
